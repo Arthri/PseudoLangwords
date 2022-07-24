@@ -1,9 +1,11 @@
-global using static PseudoLangwords.RandomNumberAlternativeKeywords;
+﻿global using static PseudoLangwords.RandomNumberAlternativeKeywords;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace PseudoLangwords;
 
-public static class RandomNumberAlternativeKeywords
+[EditorBrowsable(EditorBrowsableState.Never)]
+internal static class RandomNumberAlternativeKeywords
 {
 #pragma warning disable IDE1006 // Naming Styles
 
