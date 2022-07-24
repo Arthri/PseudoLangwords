@@ -7,7 +7,6 @@
     <Copyright>Copyright © 2022 Arthri</Copyright>
     <Description>Adds new language keywords through global usings.</Description>
     <DevelopmentDependency>true</DevelopmentDependency>
-    <EnableDefaultItems>false</EnableDefaultItems>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -26,7 +25,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="*.cs" Pack="true" />
+    <Compile Update="@(Compile)" Pack="true" />
   </ItemGroup>
 
 </Project>
