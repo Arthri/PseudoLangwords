@@ -25,6 +25,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Assets\build\**\*" Pack="true" PackagePath="build\;buildMultiTargetting\" />
     <Compile Update="@(Compile)" Pack="true" />
   </ItemGroup>
 

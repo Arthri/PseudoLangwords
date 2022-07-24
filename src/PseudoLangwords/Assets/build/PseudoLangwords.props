@@ -1,0 +1,9 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <Compile Update="@(Compile)">
+      <Visible Condition="'%(NuGetPackageId)' == 'PseudoLangwords'">false</Visible>
+    </Compile>
+  </ItemGroup>
+
+</Project>
