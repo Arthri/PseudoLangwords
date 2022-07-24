@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Authors>Arthri</Authors>
+    <Configuration>Release</Configuration>
+    <Configurations>Release</Configurations>
+    <Copyright>Copyright © 2022 Arthri</Copyright>
+    <Description>Adds new language keywords through global usings.</Description>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoBuild>true</NoBuild>
+    <Nullable>enable</Nullable>
+    <PackageId>PseudoLangwords</PackageId>
+    <PackageLicenseExpression>MIT OR MIT-0 OR Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Arthri/PseudoLangwords</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Arthri/PseudoLangwords.git</RepositoryUrl>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <TargetFramework>net6.0</TargetFramework>
+    <Title>Pseudo Langwords</Title>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="*.cs" />
+  </ItemGroup>
+
+</Project>
