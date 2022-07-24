@@ -8,6 +8,7 @@ namespace PseudoLangwords;
 internal static class NameofExpressionKeywords
 {
 #pragma warning disable IDE1006 // Naming Styles
+
     /// <summary>
     /// Returns the specified expression's string representation.
     /// </summary>
@@ -18,5 +19,6 @@ internal static class NameofExpressionKeywords
     {
         return expression;
     }
+
 #pragma warning restore IDE1006 // Naming Styles
 }

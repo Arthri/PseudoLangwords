@@ -8,6 +8,7 @@ namespace PseudoLangwords;
 internal static class GetLocationKeywords
 {
 #pragma warning disable IDE1006 // Naming Styles
+
     /// <summary>
     /// Returns the line number where this method is called.
     /// </summary>
@@ -27,5 +28,6 @@ internal static class GetLocationKeywords
     {
         return filePath;
     }
+
 #pragma warning restore IDE1006 // Naming Styles
 }
