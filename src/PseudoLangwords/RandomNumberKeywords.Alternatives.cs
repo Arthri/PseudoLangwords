@@ -1,6 +1,7 @@
 ﻿global using static PseudoLangwords.RandomNumberKeywords;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace PseudoLangwords;
 
@@ -17,7 +18,7 @@ internal static partial class RandomNumberKeywords
     public static sbyte rint8
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => rsbyte;
+        get => (sbyte)Random.Shared.Next(sbyte.MinValue, sbyte.MaxValue + 1);
     }
 
     /// <summary>
@@ -26,7 +27,7 @@ internal static partial class RandomNumberKeywords
     public static byte ruint8
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => rbyte;
+        get => (byte)Random.Shared.Next(byte.MinValue, byte.MaxValue + 1);
     }
 
     /// <summary>
@@ -35,7 +36,7 @@ internal static partial class RandomNumberKeywords
     public static short rint16
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => rshort;
+        get => (short)Random.Shared.Next(short.MinValue, short.MaxValue + 1);
     }
 
     /// <summary>
@@ -44,7 +45,7 @@ internal static partial class RandomNumberKeywords
     public static ushort ruint16
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => rushort;
+        get => (ushort)Random.Shared.Next(ushort.MinValue, ushort.MaxValue + 1);
     }
 
     /// <summary>
@@ -53,7 +54,7 @@ internal static partial class RandomNumberKeywords
     public static int rint32
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => rint;
+        get => (int)Random.Shared.NextInt64(int.MinValue, (long)int.MaxValue + 1);
     }
 
     /// <summary>
@@ -62,7 +63,7 @@ internal static partial class RandomNumberKeywords
     public static uint ruint32
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => ruint;
+        get => (uint)Random.Shared.NextInt64(uint.MinValue, (long)uint.MaxValue + 1);
     }
 
     /// <summary>
@@ -71,7 +72,13 @@ internal static partial class RandomNumberKeywords
     public static long rint64
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => rlong;
+        get
+        {
+            long result = 0;
+            var span = MemoryMarshal.Cast<long, byte>(MemoryMarshal.CreateSpan(ref result, 1));
+            Random.Shared.NextBytes(span);
+            return result;
+        }
     }
 
     /// <summary>
@@ -80,7 +87,13 @@ internal static partial class RandomNumberKeywords
     public static ulong ruint64
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => rulong;
+        get
+        {
+            ulong result = 0;
+            var span = MemoryMarshal.Cast<ulong, byte>(MemoryMarshal.CreateSpan(ref result, 1));
+            Random.Shared.NextBytes(span);
+            return result;
+        }
     }
 
     /// <summary>
