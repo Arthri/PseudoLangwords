@@ -218,6 +218,42 @@ internal static partial class RandomNumberKeywords
         get => Random.Shared.NextInt64(-1, long.MaxValue) + 1;
     }
 
+    /// <summary>
+    /// A random non-negative number less than <see cref="sbyte.MaxValue"/>.
+    /// </summary>
+    public static sbyte rpesbyte
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (sbyte)Random.Shared.Next(0, sbyte.MaxValue);
+    }
+
+    /// <summary>
+    /// A random non-negative number less than <see cref="short.MaxValue"/>.
+    /// </summary>
+    public static short rpeshort
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (short)Random.Shared.Next(0, short.MaxValue);
+    }
+
+    /// <summary>
+    /// A random non-negative number less than <see cref="int.MaxValue"/>.
+    /// </summary>
+    public static int rpeint
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => Random.Shared.Next();
+    }
+
+    /// <summary>
+    /// A random non-negative number less than <see cref="long.MaxValue"/>.
+    /// </summary>
+    public static long rpelong
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => Random.Shared.NextInt64();
+    }
+
     /// <inheritdoc cref="Random.Next(int)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int rnext(int maxValue) => Random.Shared.Next(maxValue);
