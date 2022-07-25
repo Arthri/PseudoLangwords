@@ -110,6 +110,78 @@ internal static partial class RandomNumberKeywords
         get => Random.Shared.NextDouble();
     }
 
+    /// <summary>
+    /// A random number bigger than or equal to <see cref="sbyte.MinValue" /> and less than <see cref="sbyte.MaxValue" />.
+    /// </summary>
+    public static sbyte resbyte
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (sbyte)Random.Shared.Next(sbyte.MinValue, sbyte.MaxValue);
+    }
+
+    /// <summary>
+    /// A random number bigger than or equal to <see cref="byte.MinValue" /> and less than <see cref="byte.MaxValue" />.
+    /// </summary>
+    public static byte rebyte
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (byte)Random.Shared.Next(byte.MinValue, byte.MaxValue);
+    }
+
+    /// <summary>
+    /// A random number bigger than or equal to <see cref="short.MinValue" /> and less than <see cref="short.MaxValue" />.
+    /// </summary>
+    public static short reshort
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (short)Random.Shared.Next(short.MinValue, short.MaxValue);
+    }
+
+    /// <summary>
+    /// A random number bigger than or equal to <see cref="ushort.MinValue" /> and less than <see cref="ushort.MaxValue" />.
+    /// </summary>
+    public static ushort reushort
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (ushort)Random.Shared.Next(ushort.MinValue, ushort.MaxValue);
+    }
+
+    /// <summary>
+    /// A random number bigger than or equal to <see cref="int.MinValue" /> and less than <see cref="int.MaxValue" />.
+    /// </summary>
+    public static int reint
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => Random.Shared.Next(int.MinValue, int.MaxValue);
+    }
+
+    /// <summary>
+    /// A random number bigger than or equal to <see cref="uint.MinValue" /> and less than <see cref="uint.MaxValue" />.
+    /// </summary>
+    public static uint reuint
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)Random.Shared.Next(int.MinValue, int.MaxValue);
+    }
+
+    /// <summary>
+    /// A random number bigger than or equal to <see cref="long.MinValue" /> and less than <see cref="long.MaxValue" />.
+    /// </summary>
+    public static long relong
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => Random.Shared.NextInt64(long.MinValue, long.MaxValue);
+    }
+
+    /// <summary>
+    /// A random number bigger than or equal to <see cref="ulong.MinValue" /> and less than <see cref="ulong.MaxValue" />.
+    /// </summary>
+    public static ulong reulong
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (ulong)Random.Shared.NextInt64(long.MinValue, long.MaxValue);
+    }
+
     /// <inheritdoc cref="Random.Next(int)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int rnext(int maxValue) => Random.Shared.Next(maxValue);
