@@ -162,6 +162,42 @@ internal static partial class RandomNumberKeywords
         get => (ulong)Random.Shared.NextInt64(long.MinValue, long.MaxValue);
     }
 
+    /// <summary>
+    /// A random non-negative number less than or equal to <see cref="sbyte.MaxValue" />.
+    /// </summary>
+    public static sbyte rpint8
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (sbyte)Random.Shared.Next(0, sbyte.MaxValue + 1);
+    }
+
+    /// <summary>
+    /// A random non-negative number less than or equal to <see cref="short.MaxValue" />.
+    /// </summary>
+    public static short rpint16
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (short)Random.Shared.Next(0, short.MaxValue + 1);
+    }
+
+    /// <summary>
+    /// A random non-negative number less than or equal to <see cref="int.MaxValue" />.
+    /// </summary>
+    public static int rpint32
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (int)Random.Shared.NextInt64(0, (long)int.MaxValue + 1);
+    }
+
+    /// <summary>
+    /// A random non-negative number less than or equal to <see cref="long.MaxValue"/>.
+    /// </summary>
+    public static long rpint64
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => Random.Shared.NextInt64(-1, long.MaxValue) + 1;
+    }
+
     /// <inheritdoc cref="Random.Next(int)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int rnextint32(int maxValue) => Random.Shared.Next(maxValue);
