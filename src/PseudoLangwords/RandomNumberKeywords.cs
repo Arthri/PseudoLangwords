@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -7,6 +7,8 @@ namespace PseudoLangwords;
 internal static partial class RandomNumberKeywords
 {
 #pragma warning disable IDE1006 // Naming Styles
+
+    #region Random Inclusive
 
     /// <summary>
     /// A random number bigger than or equal to <see cref="sbyte.MinValue" /> and less than or equal to <see cref="sbyte.MaxValue" />.
@@ -110,6 +112,10 @@ internal static partial class RandomNumberKeywords
         get => Random.Shared.NextDouble();
     }
 
+    #endregion
+
+    #region Random Exclusive
+
     /// <summary>
     /// A random number bigger than or equal to <see cref="sbyte.MinValue" /> and less than <see cref="sbyte.MaxValue" />.
     /// </summary>
@@ -182,6 +188,10 @@ internal static partial class RandomNumberKeywords
         get => (ulong)Random.Shared.NextInt64(long.MinValue, long.MaxValue);
     }
 
+    #endregion
+
+    #region Random Positive Inclusive
+
     /// <summary>
     /// A random non-negative number less than or equal to <see cref="sbyte.MaxValue" />.
     /// </summary>
@@ -217,6 +227,10 @@ internal static partial class RandomNumberKeywords
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get => Random.Shared.NextInt64(-1, long.MaxValue) + 1;
     }
+
+    #endregion
+
+    #region Random Positive Exclusive
 
     /// <summary>
     /// A random non-negative number less than <see cref="sbyte.MaxValue"/>.
@@ -254,6 +268,10 @@ internal static partial class RandomNumberKeywords
         get => Random.Shared.NextInt64();
     }
 
+    #endregion
+
+    #region Random.Next
+
     /// <inheritdoc cref="Random.Next(int)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int rnext(int maxValue) => Random.Shared.Next(maxValue);
@@ -269,6 +287,8 @@ internal static partial class RandomNumberKeywords
     /// <inheritdoc cref="Random.NextInt64(long, long)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static long rnext(long minValue, long maxValue) => Random.Shared.NextInt64(minValue, maxValue);
+
+    #region Collections
 
     /// <summary>
     /// Returns a random integer that is less than the specified <paramref name="collection"/>'s <see cref="ICollection.Count"/>.
@@ -360,6 +380,12 @@ internal static partial class RandomNumberKeywords
         return list[index];
     }
 
+    #endregion
+
+    #endregion
+
+    #region Random.Next Explicit Type
+
     /// <inheritdoc cref="Random.Next(int)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int rnextint(int maxValue) => Random.Shared.Next(maxValue);
@@ -375,6 +401,8 @@ internal static partial class RandomNumberKeywords
     /// <inheritdoc cref="Random.NextInt64(long, long)" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static long rnextlong(long minValue, long maxValue) => Random.Shared.NextInt64(minValue, maxValue);
+
+    #region Collections
 
     /// <summary>
     /// Returns a random integer that is less than the specified <paramref name="collection"/>'s <see cref="ICollection.Count"/>.
@@ -421,6 +449,10 @@ internal static partial class RandomNumberKeywords
         element = list[index];
         return index;
     }
+
+    #endregion
+
+    #endregion
 
 #pragma warning restore IDE1006 // Naming Styles
 }
