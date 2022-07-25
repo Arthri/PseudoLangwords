@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿global using static PseudoLangwords.RandomNumberKeywords;
+using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
