@@ -284,6 +284,7 @@ internal static partial class RandomNumberKeywords
     /// <param name="list">The list.</param>
     /// <param name="element">The element at the returned index.</param>
     /// <returns>A random index less than the specified <paramref name="list"/>'s <see cref="ICollection.Count"/>.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int rnext(IList list, out object? element)
     {
         var index = Random.Shared.Next(list.Count);
@@ -389,6 +390,7 @@ internal static partial class RandomNumberKeywords
     /// <param name="list">The list.</param>
     /// <param name="element">The element at the returned index.</param>
     /// <returns>A random index less than the specified <paramref name="list"/>'s <see cref="ICollection.Count"/>.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int rnextindex(IList list, out object? element)
     {
         var index = Random.Shared.Next(list.Count);
