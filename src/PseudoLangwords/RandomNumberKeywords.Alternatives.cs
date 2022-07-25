@@ -1,4 +1,4 @@
-﻿global using static PseudoLangwords.RandomNumberKeywords;
+global using static PseudoLangwords.RandomNumberKeywords;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -89,6 +89,22 @@ internal static partial class RandomNumberKeywords
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get => rfloat;
     }
+
+    /// <inheritdoc cref="Random.Next(int)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int rnextint32(int maxValue) => Random.Shared.Next(maxValue);
+
+    /// <inheritdoc cref="Random.Next(int, int)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int rnextint32(int minValue, int maxValue) => Random.Shared.Next(minValue, maxValue);
+
+    /// <inheritdoc cref="Random.NextInt64(long)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static long rnextint64(long maxValue) => Random.Shared.NextInt64(maxValue);
+
+    /// <inheritdoc cref="Random.NextInt64(long, long)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static long rnextint64(long minValue, long maxValue) => Random.Shared.NextInt64(minValue, maxValue);
 
 #pragma warning restore IDE1006 // Naming Styles
 }

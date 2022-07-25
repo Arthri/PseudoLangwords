@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace PseudoLangwords;
@@ -108,6 +108,38 @@ internal static partial class RandomNumberKeywords
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get => Random.Shared.NextDouble();
     }
+
+    /// <inheritdoc cref="Random.Next(int)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int rnext(int maxValue) => Random.Shared.Next(maxValue);
+
+    /// <inheritdoc cref="Random.Next(int, int)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int rnext(int minValue, int maxValue) => Random.Shared.Next(minValue, maxValue);
+
+    /// <inheritdoc cref="Random.NextInt64(long)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static long rnext(long maxValue) => Random.Shared.NextInt64(maxValue);
+
+    /// <inheritdoc cref="Random.NextInt64(long, long)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static long rnext(long minValue, long maxValue) => Random.Shared.NextInt64(minValue, maxValue);
+
+    /// <inheritdoc cref="Random.Next(int)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int rnextint(int maxValue) => Random.Shared.Next(maxValue);
+
+    /// <inheritdoc cref="Random.Next(int, int)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int rnextint(int minValue, int maxValue) => Random.Shared.Next(minValue, maxValue);
+
+    /// <inheritdoc cref="Random.NextInt64(long)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static long rnextlong(long maxValue) => Random.Shared.NextInt64(maxValue);
+
+    /// <inheritdoc cref="Random.NextInt64(long, long)" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static long rnextlong(long minValue, long maxValue) => Random.Shared.NextInt64(minValue, maxValue);
 
 #pragma warning restore IDE1006 // Naming Styles
 }
