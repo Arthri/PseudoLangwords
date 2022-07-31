@@ -45,6 +45,7 @@ jobs:
         run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version="${TARGET_TAG:1}" --no-restore
 
       - name: Publish Package
-        run: dotnet nuget push ./src/PseudoLangwords/bin/Release/*.nupkg -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json
-        env:
-          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: ./src/PseudoLangwords/bin/Release/*.nupkg
