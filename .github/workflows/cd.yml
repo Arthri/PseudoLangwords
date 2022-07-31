@@ -22,13 +22,13 @@ jobs:
   nugetpush:
     runs-on: ubuntu-20.04
     steps:
-      - name: Check Version Exists
-        run: if ! [[ $(git tag -l "$TARGET_VERSION") ]]; then exit 1; fi
-
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
           ref: ${{ env.TARGET_VERSION }}
+
+      - name: Check Version Exists
+        run: if ! [[ $(git tag -l "$TARGET_VERSION") ]]; then exit 1; fi
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
