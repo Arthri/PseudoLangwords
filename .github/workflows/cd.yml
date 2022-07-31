@@ -42,7 +42,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Pack Package
-        run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version="${TARGET_TAG:1}"
+        run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version="${TARGET_TAG:1}" --no-restore
 
       - name: Publish Package
         run: dotnet nuget push ./src/PseudoLangwords/bin/Release/*.nupkg -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json
