@@ -41,6 +41,14 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
+      - name: Fetch Cache
+        uses: actions/cache@v2
+        id: main-cache
+        with:
+          path: |
+            **/obj
+          key: ${{ runner.os }}-main-${{ hashFiles('**/*.csproj') }}
+
       - name: Pack Package
         run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version="${TARGET_TAG:1}"
 
