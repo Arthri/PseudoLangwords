@@ -8,6 +8,7 @@
     <Copyright>Copyright © 2022 Arthri</Copyright>
     <Description>Adds new language keywords through global usings.</Description>
     <DevelopmentDependency>true</DevelopmentDependency>
+    <EnableDefaultItems>false</EnableDefaultItems>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -28,7 +29,7 @@
   <ItemGroup>
     <None Include="Assets/build/**/*" Pack="true" PackagePath="build/;buildMultiTargetting/" />
     <None Include="../../README.md" Pack="true" PackagePath="/" />
-    <Compile Update="@(Compile)" Pack="true" />
+    <Compile Include="**/*$(DefaultLanguageSourceExtension)" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" Pack="true" />
   </ItemGroup>
 
 </Project>
