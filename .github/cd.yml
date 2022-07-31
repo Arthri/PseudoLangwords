@@ -1,0 +1,41 @@
+name: CD
+
+on:
+  release:
+    types: [ published ]
+
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "The version to publish"
+        required: true
+        type: string
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  nugetpush:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check Version Exists
+        run: if ! [[ $(git tag -l "${{ inputs.version }}") ]]; then exit 1; fi
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ format('v{0}', inputs.version) || github.event.release.tag_name }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Pack Package
+        run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version=${{ inputs.version }}
+
+      - name: Publish Package
+        run: dotnet nuget push ./src/PseudoLangwords/bin/Release/*.nupkg -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json
+        env:
+          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
