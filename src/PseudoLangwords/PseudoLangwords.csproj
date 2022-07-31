@@ -16,6 +16,7 @@
     <PackageId>PseudoLangwords</PackageId>
     <PackageLicenseExpression>MIT OR MIT-0 OR Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Arthri/PseudoLangwords</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Arthri/PseudoLangwords.git</RepositoryUrl>
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
@@ -25,6 +26,7 @@
 
   <ItemGroup>
     <None Include="Assets/build/**/*" Pack="true" PackagePath="build/;buildMultiTargetting/" />
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
     <Compile Update="@(Compile)" Pack="true" />
   </ItemGroup>
 
