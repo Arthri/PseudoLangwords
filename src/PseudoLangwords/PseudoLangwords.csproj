@@ -21,7 +21,6 @@
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
     <TargetFramework>net6.0</TargetFramework>
     <Title>Pseudo Langwords</Title>
-    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
