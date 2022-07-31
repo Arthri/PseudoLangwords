@@ -1,5 +1,5 @@
 # PseudoLangwords
-[![Project License](https://img.shields.io/badge/license-MIT%20OR%20MIT--0%20OR%20Apache--2.0-green?style=flat-square "License")](https://github.com/Arthri/PseudoLangwords/blob/44a4d691faa514b2f16d870fac94f6f93ebe2dbb/LICENSE.md) [![NuGet](https://img.shields.io/nuget/v/PseudoLangwords?style=flat-square "Latest NuGet Release")](https://www.nuget.org/packages/PseudoLangwords/latest)
+[![Project License](https://img.shields.io/badge/license-MIT%20OR%20MIT--0%20OR%20Apache--2.0-green?style=flat-square "License")](https://github.com/Arthri/PseudoLangwords/blob/6ff6eca5e75db602dd3e36703b15a9798e57d1c4/LICENSE) [![NuGet](https://img.shields.io/nuget/v/PseudoLangwords?style=flat-square "Latest NuGet Release")](https://www.nuget.org/packages/PseudoLangwords/latest)
 
 ## Disclaimer
 This project is not meant to be used seriously; it is merely a proof of concept
@@ -109,4 +109,8 @@ Console.WriteLine(rint);
 ```
 
 ## License
-This work is available under three licenses: [MIT, MIT-0 and Apache 2.0](https://github.com/Arthri/PseudoLangwords/blob/44a4d691faa514b2f16d870fac94f6f93ebe2dbb/LICENSE.md)
+This work is available under three licenses: [MIT], [MIT-0], and [Apache 2.0]
+
+[MIT]: https://github.com/Arthri/PseudoLangwords/blob/6ff6eca5e75db602dd3e36703b15a9798e57d1c4/LICENSE-MIT
+[MIT-0]: https://github.com/Arthri/PseudoLangwords/blob/6ff6eca5e75db602dd3e36703b15a9798e57d1c4/LICENSE
+[Apache 2.0]: https://github.com/Arthri/PseudoLangwords/blob/6ff6eca5e75db602dd3e36703b15a9798e57d1c4/LICENSE-Apache_2.0
