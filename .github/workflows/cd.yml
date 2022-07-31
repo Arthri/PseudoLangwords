@@ -16,19 +16,25 @@ defaults:
     shell: bash
 
 env:
-  TARGET_VERSION: ${{ format('v{0}', inputs.version) || github.event.release.tag_name }}
+  TARGET_TAG: ${{ inputs.version && format('v{0}', inputs.version) || github.event.release.tag_name }}
 
 jobs:
   nugetpush:
     runs-on: ubuntu-20.04
     steps:
+      - name: Check Version Exists
+        if: github.event_name == 'workflow_dispatch'
+        run: >-
+          curl
+            -f
+            -H "Accept: application/vnd.github+json"
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}"
+            https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ env.TARGET_TAG }}
+
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          ref: ${{ env.TARGET_VERSION }}
-
-      - name: Check Version Exists
-        run: if ! [[ $(git tag -l "$TARGET_VERSION") ]]; then exit 1; fi
+          ref: ${{ env.TARGET_TAG }}
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
@@ -36,7 +42,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Pack Package
-        run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version="${TARGET_VERSION:1}"
+        run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version="${TARGET_TAG:1}"
 
       - name: Publish Package
         run: dotnet nuget push ./src/PseudoLangwords/bin/Release/*.nupkg -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json
