@@ -15,17 +15,20 @@ defaults:
   run:
     shell: bash
 
+env:
+  TARGET_VERSION: ${{ format('v{0}', inputs.version) || github.event.release.tag_name }}
+
 jobs:
   nugetpush:
     runs-on: ubuntu-20.04
     steps:
       - name: Check Version Exists
-        run: if ! [[ $(git tag -l "${{ inputs.version }}") ]]; then exit 1; fi
+        run: if ! [[ $(git tag -l "$TARGET_VERSION") ]]; then exit 1; fi
 
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          ref: ${{ format('v{0}', inputs.version) || github.event.release.tag_name }}
+          ref: ${{ env.TARGET_VERSION }}
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
@@ -33,7 +36,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Pack Package
-        run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version=${{ inputs.version }}
+        run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version="${TARGET_VERSION:1}"
 
       - name: Publish Package
         run: dotnet nuget push ./src/PseudoLangwords/bin/Release/*.nupkg -k $NUGET_TOKEN -s https://api.nuget.org/v3/index.json
