@@ -109,8 +109,8 @@ Console.WriteLine(rint);
 ```
 
 ## License
-This work is available under different licenses: [MIT], [MIT-0], and [Apache 2.0]
+This work is available under different licenses: [`MIT`][MIT], [`MIT-0`][MIT-0], and [`Apache 2.0`][Apache_2.0]
 
 [MIT]: https://github.com/Arthri/PseudoLangwords/blob/6ff6eca5e75db602dd3e36703b15a9798e57d1c4/LICENSE-MIT
 [MIT-0]: https://github.com/Arthri/PseudoLangwords/blob/6ff6eca5e75db602dd3e36703b15a9798e57d1c4/LICENSE
-[Apache 2.0]: https://github.com/Arthri/PseudoLangwords/blob/6ff6eca5e75db602dd3e36703b15a9798e57d1c4/LICENSE-Apache_2.0
+[Apache_2.0]: https://github.com/Arthri/PseudoLangwords/blob/6ff6eca5e75db602dd3e36703b15a9798e57d1c4/LICENSE-Apache_2.0
