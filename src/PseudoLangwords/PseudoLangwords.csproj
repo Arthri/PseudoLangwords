@@ -21,13 +21,13 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Arthri/PseudoLangwords.git</RepositoryUrl>
-    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
     <TargetFramework>net6.0</TargetFramework>
     <Title>Pseudo Langwords</Title>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="Assets/build/**/*" Pack="true" PackagePath="build/;buildMultiTargetting/" />
+    <None Include="Assets/lib/**/*" Pack="true" PackagePath="lib/" />
     <None Include="../../README.md" Pack="true" PackagePath="/" />
     <Compile Include="**/*$(DefaultLanguageSourceExtension)" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" Pack="true" />
   </ItemGroup>
