@@ -2,12 +2,8 @@
 
   <PropertyGroup>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <Authors>Arthri</Authors>
     <Configuration>Release</Configuration>
     <Configurations>Release</Configurations>
-    <Copyright>Copyright © 2022 Arthri</Copyright>
-    <Description>Adds new language keywords through global usings.</Description>
-    <DevelopmentDependency>true</DevelopmentDependency>
     <EnableDefaultItems>false</EnableDefaultItems>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -15,13 +11,20 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <NoBuild>true</NoBuild>
     <Nullable>enable</Nullable>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Arthri</Authors>
+    <Copyright>Copyright © 2022 Arthri</Copyright>
+    <Description>Adds new language keywords through global usings.</Description>
+    <DevelopmentDependency>true</DevelopmentDependency>
     <PackageId>PseudoLangwords</PackageId>
     <PackageLicenseExpression>MIT OR MIT-0 OR Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Arthri/PseudoLangwords</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Arthri/PseudoLangwords.git</RepositoryUrl>
-    <TargetFramework>net6.0</TargetFramework>
     <Title>Pseudo Langwords</Title>
   </PropertyGroup>
 
