@@ -40,7 +40,7 @@ jobs:
       - name: Pack Package
         env:
           CHANGELOG: ${{ steps.version_check.outputs.version_json && fromJSON(steps.version_check.outputs.version_json).body || github.event.release.body }}
-        run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version="${TARGET_TAG:1}" -p:PackageReleaseNotes="$CHANGELOG"
+        run: dotnet pack ./src/PseudoLangwords/PseudoLangwords.csproj -p:Version="${TARGET_TAG:1}" -p:PackageReleaseNotes="$CHANGELOG" -warnaserror
 
       - name: Publish Package
         env:
