@@ -1,5 +1,5 @@
 # PseudoLangwords
-[![Project License](https://img.shields.io/badge/license-MIT%20OR%20MIT--0%20OR%20Apache--2.0-green?style=flat-square "License")](https://github.com/Arthri/PseudoLangwords/blob/6ff6eca5e75db602dd3e36703b15a9798e57d1c4/LICENSE) [![NuGet](https://img.shields.io/nuget/v/PseudoLangwords?style=flat-square "Latest NuGet Release")](https://www.nuget.org/packages/PseudoLangwords/latest)
+[![Project License](https://img.shields.io/badge/license-MIT%20OR%20MIT--0%20OR%20Apache--2.0-green?style=flat-square "License")](https://github.com/Arthri/PseudoLangwords#License) [![NuGet](https://img.shields.io/nuget/v/PseudoLangwords?style=flat-square "Latest NuGet Release")](https://www.nuget.org/packages/PseudoLangwords/latest)
 
 ## Disclaimer
 This project is not meant to be used seriously; it is merely a proof of concept
