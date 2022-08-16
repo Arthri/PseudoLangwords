@@ -22,6 +22,7 @@ jobs:
   nugetpush:
     environment: NuGet
     runs-on: ubuntu-20.04
+    timeout-minutes: 2
     steps:
       - name: Check Version Exists
         id: version_check
