@@ -1,3 +1,11 @@
+---
+
+# DEPRECATED
+
+Moved to [Arthri/Belp](https://github.com/Arthri/Belp)
+
+---
+
 # PseudoLangwords
 Adds new language keywords through global usings
 
